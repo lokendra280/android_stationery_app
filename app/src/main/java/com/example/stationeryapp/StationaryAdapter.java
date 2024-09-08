@@ -1,5 +1,6 @@
 package com.example.stationeryapp;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -13,56 +14,62 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class StationaryAdapter extends RecyclerView.Adapter<StationaryAdapter.StationaryViewHolder> {
+public class StationaryAdapter extends RecyclerView.Adapter<StationaryAdapter.ViewHolder> {
 
-    private List<StationaryItem> stationaryItemList;
-    private Context context;
+    private final List<StationaryItem> itemList;
+    private final Context context;
 
-    public StationaryAdapter(List<StationaryItem> stationaryItemList) {
+    public StationaryAdapter(Context context, List<StationaryItem> itemList) {
         this.context = context;
-        this.stationaryItemList = stationaryItemList;
+        this.itemList = itemList;
+
     }
 
-    @NonNull
     @Override
-    public StationaryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_stationary, parent, false);
-        return new StationaryViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull StationaryViewHolder holder, int position) {
-        StationaryItem item = stationaryItemList.get(position);
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        StationaryItem item = itemList.get(position);
         holder.itemName.setText(item.getName());
         holder.itemImage.setImageResource(item.getImageResource());
+        holder.itemPrice.setText(String.format("$%.2f", item.getPrice()));
 
-        // Handle item click
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, ItemDetailActivity.class);
             intent.putExtra("item_name", item.getName());
             intent.putExtra("item_image", item.getImageResource());
             intent.putExtra("item_description", item.getDescription());
             intent.putExtra("item_price", item.getPrice());
-            context.startActivity(intent);
+            if (context instanceof Activity) {
+                ((Activity) context).startActivity(intent);
+            } else {
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+
         });
-
-
     }
 
     @Override
     public int getItemCount() {
-        return stationaryItemList.size();
+        return itemList.size();
     }
 
-    public static class StationaryViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        public TextView itemName;
+        public ImageView itemImage;
+     public TextView itemPrice;
 
-        ImageView itemImage;
-        TextView itemName;
+        public ViewHolder(View view) {
+            super(view);
+            itemName = view.findViewById(R.id.item_name);
+            itemImage = view.findViewById(R.id.item_image);
+            itemPrice = itemView.findViewById(R.id.item_price);
 
-        public StationaryViewHolder(@NonNull View itemView) {
-            super(itemView);
-            itemImage = itemView.findViewById(R.id.item_image);
-            itemName = itemView.findViewById(R.id.item_name);
         }
     }
 }
