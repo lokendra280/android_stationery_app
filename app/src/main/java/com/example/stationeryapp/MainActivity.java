@@ -57,12 +57,44 @@ public class MainActivity extends AppCompatActivity {
                 "Features: Some erasers have added features such as being dust-free, smudge-resistant, or designed for precise erasing.\n" +
                 "Uses: Ideal for correcting mistakes in writing, sketching, and drawing. Perfect for use in schools, offices, and art studios.\n" +
                 "A good-quality eraser ensures clean and efficient removal of pencil marks, making it an essential tool for maintaining neatness and accuracy in your work.", 0.99));
+        stationaryItemList.add(new StationaryItem("Eraser", R.drawable.erasser, "An eraser is a versatile tool designed to remove pencil marks or other forms of writing from paper surfaces. It's a must-have accessory for students, artists, and anyone who uses pencils for writing or drawing.\n" +
+                "\n" +
+                "Material: Typically made from rubber, vinyl, or TPR (thermoplastic rubber), which provides effective removal of pencil marks without damaging the paper.\n" +
+                "Shape: Available in various shapes, including rectangular, cylindrical, or pencil-shaped, to cater to different erasing needs and preferences.\n" +
+                "Color: Commonly found in shades of white, pink, or blue, though colors may vary based on brand and type.\n" +
+                "Features: Some erasers have added features such as being dust-free, smudge-resistant, or designed for precise erasing.\n" +
+                "Uses: Ideal for correcting mistakes in writing, sketching, and drawing. Perfect for use in schools, offices, and art studios.\n" +
+                "A good-quality eraser ensures clean and efficient removal of pencil marks, making it an essential tool for maintaining neatness and accuracy in your work.", 0.99));
+
         stationaryItemList.add(new StationaryItem("Calculator", R.drawable.calculator, "A calculator is a practical tool used for performing mathematical calculations quickly and accurately. Whether for simple arithmetic or complex equations, a calculator is an essential device in both academic and professional settings.\n" +
                 "\n" +
                 "Type: Available in variou Keypads vary from simple, straightforward layouts to more complex arrangements depending on the calculator type.\n" +
                 "ith some models featuring dual power sources for convenience.\n" +
                 "Uses: Ideal for students, professionals, and anyone needing to perform mathematical calculations. Commonly used in educational environments, business settings, and everyday tasks.", 4.99));
-        
+        stationaryItemList.add(new StationaryItem("Pen", R.drawable.pen, "A pen is a versatile writing instrument that uses ink to produce lines on paper or other surfaces. It is an essential tool for writing, drawing, and note-taking in various settings, from classrooms and offices to creative studios and homes. Pens come in a variety of styles, including ballpoint, rollerball, fountain, and gel pens, each offering a unique writing experience.\n" +
+                "\n" +
+                "Ink Type: Available in different inks like ballpoint (oil-based), rollerball (water-based), gel, and fountain.\n" +
+                "Design: Comes in various designs, including retractable, capped, and twist-action mechanisms.\n" +
+                "Grip: Often designed with ergonomic grips for comfortable writing.\n" +
+                "Refillable: Many pens are refillable, reducing waste and allowing for a continuous writing experience.\n" +
+                "Uses: Ideal for everyday writing tasks, signature signing, and artistic endeavors.\n" +
+                "A good pen combines smooth writing performance with durability, making it a reliable companion for all your writing needs.", 2.49));
+        stationaryItemList.add(new StationaryItem("Pen", R.drawable.pen, "A pen is a versatile writing instrument that uses ink to produce lines on paper or other surfaces. It is an essential tool for writing, drawing, and note-taking in various settings, from classrooms and offices to creative studios and homes. Pens come in a variety of styles, including ballpoint, rollerball, fountain, and gel pens, each offering a unique writing experience.\n" +
+                "\n" +
+                "Ink Type: Available in different inks like ballpoint (oil-based), rollerball (water-based), gel, and fountain.\n" +
+                "Design: Comes in various designs, including retractable, capped, and twist-action mechanisms.\n" +
+                "Grip: Often designed with ergonomic grips for comfortable writing.\n" +
+                "Refillable: Many pens are refillable, reducing waste and allowing for a continuous writing experience.\n" +
+                "Uses: Ideal for everyday writing tasks, signature signing, and artistic endeavors.\n" +
+                "A good pen combines smooth writing performance with durability, making it a reliable companion for all your writing needs.", 2.49));
+        stationaryItemList.add(new StationaryItem("Eraser", R.drawable.erasser, "An eraser is a versatile tool designed to remove pencil marks or other forms of writing from paper surfaces. It's a must-have accessory for students, artists, and anyone who uses pencils for writing or drawing.\n" +
+                "\n" +
+                "Material: Typically made from rubber, vinyl, or TPR (thermoplastic rubber), which provides effective removal of pencil marks without damaging the paper.\n" +
+                "Shape: Available in various shapes, including rectangular, cylindrical, or pencil-shaped, to cater to different erasing needs and preferences.\n" +
+                "Color: Commonly found in shades of white, pink, or blue, though colors may vary based on brand and type.\n" +
+                "Features: Some erasers have added features such as being dust-free, smudge-resistant, or designed for precise erasing.\n" +
+                "Uses: Ideal for correcting mistakes in writing, sketching, and drawing. Perfect for use in schools, offices, and art studios.\n" +
+                "A good-quality eraser ensures clean and efficient removal of pencil marks, making it an essential tool for maintaining neatness and accuracy in your work.", 0.99));
         // Initially, the filtered list will contain all the items
         filteredList = new ArrayList<>(stationaryItemList);
 
